@@ -1,0 +1,391 @@
+:root {
+  --white:      #F5F5F5;  --black:      #121212;  --redRAW:     #B8202D;
+  --redMNR:     #D33A48;  --orangeSS:   #f57c00;  --orangeCOTC: #FFBE7E;
+  --yellowPPV:  #FFFF00;  --yellowNXT:  #FFC71C;  --greenECW:   #50C878; 
+  --greenWC:    #C1FF7D;  --greenTDR:   #7DFFC2;  --blueSD:     #00BBEC;
+  --blueSNME:   #6392cf;  --blueNTR:    #7DBBFF;  --blueFNS:    #479dea; 
+  --blue:       #006AC9;  --purpleWW:   #c592f7;  --pinkWW:     #FF7DDD;
+  --greyDARK:   #404040;  --greyMED:    #606060;  --greyLGT:    #808080;
+  --greyBRT:    #ADB5BD;  --blueHDR:    #275596;  --orangePPV:  #f57c00;
+  --beigeWC:    #eca58f;  --purple205:  #b06af4;  --redROH:     #cc2229;
+  --redIMP:     #da0109;  --orangeNWA:  #feb71a;  --greySTR:    #2c3034;
+  --greyHOV:    #323539;
+}
+
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+html { font-family: Arial; font-size: 100%; }
+
+body {
+  margin: 0; /* prevents scrollbars */
+  color: var(--white);
+  background-color: var(--black);
+  /* background: url('http://localhost/joww/images/bg.jpg') repeat fixed center top; */
+  /* background: url('http://wrestling.johnny-o.net/images/bg.jpg') repeat fixed center top; */
+  min-width: 22em; font-size: 1rem;
+}
+
+form { text-align: center; }
+
+img      { border: none; }
+img.logo { filter: drop-shadow( 0.3125em  0.3125em 0.1875em var(--black))
+                   drop-shadow(-0.3125em -0.3125em 0.1875em var(--black));
+           max-height: 4em;
+           object-fit: scale-down;
+         }
+.long-logo   { display: block; }
+.short-logo  { display: none; }
+.show-on-small { display: none; }
+
+label { font-weight: bold;} 
+
+p { text-align: center; background-color: var(--black); margin: 0; }
+
+strong { font-size: 1em; }
+
+.main-container { margin: 0 auto;
+                  height: 100%;  width: 100%;  max-width: 60em;
+                  display: grid;
+                  grid-template-columns: 1fr;  grid-template-rows: auto 1fr;
+                  grid-template-areas: 
+                  "header"
+                  "main";
+                  color: var(--white);     background-color: var(--black); }
+
+.header { grid-area: header;  background-color: var(--blueHDR);  display: grid;
+          width: 100%;  grid-template-columns: auto 1fr auto;  grid-template-rows: auto;
+          grid-template-areas: "mainMenu jowwLogo w3c";  justify-items: center;  align-items: center;
+          box-shadow: inset 0 0.0625em 0.3125em 0.3125em rgba(24, 54, 95, 1.0);  z-index: 1100; }
+
+.menuPane { grid-area: mainMenu;  display: flex;  justify-content: center;
+            align-items: center;  padding-left: 1em; }
+
+.logoPane { grid-area: jowwLogo;  display: flex;  justify-content: center;  align-items: center; }
+
+.w3cPane { grid-area: w3c;  display: flex;  justify-content: center;  
+           align-items: center;  padding-right: 1em; }
+
+.main::-webkit-scrollbar,
+.index-layout::-webkit-scrollbar,
+tbody::-webkit-scrollbar
+       {display: none;}
+
+.main { grid-area: main;  scrollbar-width: none;   flex-direction: column;
+        display: flex;  align-items: center; }
+
+/* -------- Layout for Roster Page ------------------------------- */
+.roster-main { grid-area: main;  display: flex;  flex-flow: row wrap;  width: 100%;  height: 100%;
+               justify-content: space-evenly;  gap: 0.5em; padding: 1.5em 0.5em 1.5em 0.5em;
+               overflow: auto;  background-color: var(--black);}
+
+.roster-main::-webkit-scrollbar { display: none; }
+
+.roster-box { background-color: var(--black);  height: auto;  width: 18em;  border-radius: 0.625em;
+              box-shadow: 0.125em 0.125em 0.0625em rgba(245, 245, 245, 0.4); 
+              border: 1px solid rgba(245, 245, 245, 0.4);}
+
+.roster-image { float: left;  height: 5em;  width: 8em;  border-radius: 0.625em; margin: 0 0.25em 0.25em 0; }
+/* -------------------------------------------------------------- */
+
+/* -------- Layout for Database Page ---------------------------- */
+.database-main { grid-area: main;  display: flex;  flex-flow: column wrap;
+                 width: 100%;  height: 100%;  justify-content: center;  align-items: center; }
+
+.black-btn { border: solid 0.0625em var(--white);  font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;  background-color: var(--black);  padding: 0.5em 1em; font-size: 1em;
+    border-radius: 0.25em; }
+.form-floating label { font-weight: 400; color: var(--black); font-size: 1em;}
+.form-floating > textarea.form-control { text-align: center; height: 12em; }
+.form-floating > .form-control { height: 3.5em; font-size: 1em; }
+/* .selectpicker { background: var(--black); color: var(--white); } */
+/* -------------------------------------------------------------- */
+
+/* -------- Layout for Events Listing --------------------------- */
+.month-dates { border-radius: 1em; border: 0.0625em solid var(--greyLGT); padding: 0.125em; max-width: 24%;}
+.month-dates .event-name { width: 85%; }
+.month-dates .event-date { width: 15%; }
+
+.arena_list:nth-child(2n) { background-color: var(--greySTR); }
+.arena_list:hover { background-color: var(--greyHOV); }
+/* -------------------------------------------------------------- */
+
+.dblink { padding: 0.3125em;  background-color: var(--black);  backdrop-filter: blur(0.3125em);
+          justify-self: center;  align-self: center; }
+
+legend { background-color: var(--black);  border: 0.0625em solid var(--white);
+         box-shadow: 0.0625em 0.0625em 0.0625em 0.0625em var(--greyLGT); }
+
+textarea { text-align: center; height: 4em; }
+
+.image-zoom { padding: 0;  transition: transform 0.12s;  width: auto;  border-radius: 0.625em; }
+
+.image-zoom:hover { transform: scale(1.5);  border: 0.0625em solid var(--white);  z-index: 500; }
+
+.field { background-color: var(--black);  min-width: 37.5em;  display: flex;  justify-content: center; }
+
+.city-bubble { background-color: var(--greyDARK); border-radius: 2em; }
+
+/* Ã“=Ó | Ã¡=á | Ã³=ó | Ã­-=í | Ã=Á | Å«=u */
+
+a:visited, a:active, a:link, a:hover { color: inherit; font-weight: bold; text-decoration: none; }
+a:hover { color: #F5F5F5AA; text-decoration: underline; }
+
+dd { margin-bottom: 0; }
+
+.wwe  { color: var(--white);     }  .raw  { color: var(--redRAW);    }  .sd   { color: var(--blueSD);     }
+.ppv  { color: var(--orangePPV); }  .nxt  { color: var(--yellowNXT); }  .ecw  { color: var(--greenECW);   }
+.snme { color: var(--blueSNME);  }  .ss   { color: var(--orangeSS);  }  .cotc { color: var(--orangeCOTC); }
+.wc   { color: var(--greenWC);   }  .tdr  { color: var(--greenTDR);  }  .ntr  { color: var(--blueNTR);    }
+.ww   { color: var(--purpleWW);  }  .pro  { color: var(--pinkWW);    }  .mnr  { color: var(--redMNR);     }
+.fns  { color: var(--blueFNS);   }  .blk  { color: var(--black);     }  .sups { color: #b7c9e2;         }
+.cha  { color: var(--beigeWC);   }  .liv  { color: var(--purple205); }  .roh  { color: var(--redROH);     }
+.imp  { color: var(--redIMP);    }  .nwa  { color: var(--orangeNWA); }  .wcw  { color: var(--redROH);     }
+.unknown { color: var(--orangeNWA);}
+
+.bg-wwe  { background-color: var(--white);     }  .bg-raw  { background-color: var(--redRAW);    }  .bg-sd   { background-color: var(--blueSD);     }
+.bg-ppv  { background-color: var(--orangePPV); }  .bg-nxt  { background-color: var(--yellowNXT); }  .bg-ecw  { background-color: var(--greenECW);   }
+.bg-snme { background-color: var(--blueSNME);  }  .bg-ss   { background-color: var(--orangeSS);  }  .bg-cotc { background-color: var(--orangeCOTC); }
+.bg-wc   { background-color: var(--greenWC);   }  .bg-tdr  { background-color: var(--greenTDR);  }  .bg-ntr  { background-color: var(--blueNTR);    }
+.bg-ww   { background-color: var(--purpleWW);  }  .bg-pro  { background-color: var(--pinkWW);    }  .bg-mnr  { background-color: var(--redMNR);     }
+.bg-fns  { background-color: var(--blueFNS);   }  .bg-blk  { background-color: var(--black);     }  .bg-sups { background-color: #b7c9e2;         }
+.bg-cha  { background-color: var(--beigeWC);   }  .bg-liv  { background-color: var(--purple205); }  .bg-roh  { background-color: var(--redROH);     }
+.bg-imp  { background-color: var(--redIMP);    }  .bg-nwa  { background-color: var(--orangeNWA); }  .bg-wcw  { background-color: var(--redROH);     }
+
+.swatch  {height: 3em; width: 3em; align-self: center; margin: auto 1em; border-radius: 2em;}
+
+textarea    {font-size: 0.875em; font-family: Arial;}
+
+input         { font-size: 0.875em; font-family: Arial; font-weight: bold; text-align: center;
+                background-color: var(--white); }
+input.submit, .blue-btn  { border: solid 0.0625em var(--blueFNS);  font-size: 1em;
+                           padding: 0.25em 0.5em;  color: var(--blueFNS);  font-weight: bold;
+                           background-color: var(--white);  border-radius: 0.5em; }
+
+option      { font-size: 1em; font-family: Arial; }
+option.bio  { font-size: 1.0625em; font-family: Arial; }
+
+b           { color: var(--white);}
+.note       { font-style: normal;  font-weight: normal;  font-size: 1em; 
+              padding: 0 2em;  text-align: justify; }
+.small      { font-size: 0.75em; }
+em          { color: var(--redRAW); }
+
+.sticky-header   { position:sticky; z-index: 11; top: 4em; background-color: var(--black);}
+.event-info-box  { min-height: 5em; }
+th.sticky-header { box-shadow: inset 0 0 0 var(--white), inset 0 -1px 0 var(--white); }
+.results-flex    { display: flex; flex-direction: row;}
+
+.titles-stats > tbody > tr:hover { background-color: #323539; }
+tr:hover,
+.bio-titles   tr:hover { background-color: #323539; }
+.bio-titles {
+  font-size: 0.9em; padding: 0; margin: 0;
+  border-collapse: collapse; border: 0 solid var(--black);
+}
+
+.col_head_img { height: 3em; border: none;}
+
+.left-white   { border-left:   solid 1px var(--white); }
+.right-white  { border-right:  solid 1px var(--white); }
+.bottom-white { border-bottom: solid 1px var(--white); }
+.top-white    { border-top:    solid 1px var(--white); }
+.all-white    { border:        solid 1px var(--white); }
+
+.left-grey    { border-left:   solid 1px var(--greyMED); }
+.right-grey   { border-right:  solid 1px var(--greyMED); }
+.bottom-grey  { border-bottom: solid 1px var(--greyMED); }
+.top-grey     { border-top:    solid 1px var(--greyMED); }
+.all-grey     { border:        solid 1px var(--greyLGT); min-width: 16em;}
+
+div.sub-stats { display: flex; place-self: center; }
+
+td {min-width: 1.25em;}
+
+.titles-stats    { font-size: 1em; border-collapse: collapse; table-layout: fixed;
+                   background-color: var(--black); }
+.titles-stats thead, .titles-stats tbody { border-bottom: 0.0625em solid var(--greyLGT); }
+.titles-stats th { color: var(--greenECW); padding: 0 0.25em; }
+.titles-stats td { border-bottom: 0.0625em solid var(--greyDARK); padding: 0.125em 0.25em; }
+
+.most-names  { width: 13em; text-align: left;   }
+.most-reigns { width:  5em; text-align: center; color: var(--blueSD); font-weight: 700; }
+.most-first  { width:  8em; text-align: center; }
+.most-last   { width:  8em; text-align: center; }
+
+.longest-rank        { width:  2em; text-align: right;  }
+.longest-champ       { width: 13em; text-align: left;   }
+.longest-champ-sm    { width: 13em; text-align: left;   }
+.longest-champ-title { width:  7em; text-align: center; }
+.longest-start       { width:  8em; text-align: center; }
+.longest-end         { width:  8em; text-align: center; }
+.longest-length      { width:  6em; text-align: right;  color: var(--yellowNXT);}
+
+.total-rank    { width:  2em; text-align: right;  vertical-align: top; }
+.total-champ   { width: 11em; text-align: left;   vertical-align: top; }
+.total-reigns  { width:  5em; text-align: center; vertical-align: top; }
+.total-span    { width:  7em; text-align: center; vertical-align: top; }
+.total-total   { width:  7em; text-align: center; vertical-align: top; color: var(--yellowNXT)}
+.total-average { width:  6em; text-align: right;  vertical-align: top; }
+
+.events-name   { width: 18em;  text-align: left; }
+.events-number { width: 5.5em; text-align: center; color: var(--blueSD); font-weight: 700; }
+
+.header-shadow { text-shadow:  0.125em  0.125em var(--black),
+                               0.125em -0.125em var(--black),
+                              -0.125em  0.125em var(--black),
+                              -0.125em -0.125em var(--black);}
+.hdr-1 { font-size: 3.0000em; }
+.hdr-2 { font-size: 2.8125em; font-weight: 800; }
+.hdr-3 { font-size: 1.8750em; }
+.hdr-4 { font-size: 1.5625em; }
+.hdr-5 { font-size: 1.4275em; }
+.hdr-6 { font-size: 1.1250em; justify-self: center; align-self: center; font-weight: 500; }
+.hdr-1, .hdr-2, .hdr-3, .hdr-4, .hdr-5, .hdr-6
+       { background-color: var(--black); backdrop-filter: blur(0.3125em); }
+.sub { font-size: xx-small; vertical-align: bottom; }
+
+#eventinfo, #resultnotes, #mapinfo {
+  position: absolute; border: 0.0625em solid var(--white); padding: 0;
+  visibility: hidden; z-index: 200; color: var(--black); opacity: 0;
+}
+
+#thumbnail   { position: absolute; width: 9.5em; height: 9.5em; border: 0.0625em solid var(--white); padding: 0;
+               visibility: hidden; z-index: 200; background-color: var(--black);}
+
+#displayinfo { background-color: var(--black);  border: 0.0625em solid var(--white); 
+               height: 4em;  width: 16em;  color: var(--white);  font-weight: 900;
+               text-align: center;  vertical-align: middle; }
+
+#resultsinfo { background-color: var(--black);  width: 16em;  color: var(--white);
+               font-weight: 900;  text-align: center;  vertical-align: middle; }
+             
+#dismapinfo { background-image: url(http://wrestling.johnny-o.net/images/sm_wwe_bw.jpg);
+              height: 4em;  width: 14em;  color: var(--white)DF;
+              font-weight: 900;  text-align: center; }
+
+@media screen and (min-width: 0) and (max-width: 650px) {
+  .long-logo  { display: none; }
+  .short-logo { display: block; }
+  .hide-on-small { display: none; }
+  .show-on-small { display: inline-block; }
+}
+
+@media screen and (max-width: 575px) {
+  .hdr-6, .header8 { font-size: 1em; }
+  .results-flex      { flex-direction: column; }
+  .sticky-header     { top: 4em; }
+  .month-dates       { min-width: 48%;}
+}
+
+/* ------------------------------- Changes for Larger Screens --------------------------------------- */
+
+@media screen and (max-width: 1096px)                          { body { font-size: 1.000rem;} }
+@media screen and (min-width: 1096px) and (min-height: 812px)  { body { font-size: 1.125rem;} }
+@media screen and (min-width: 1224px) and (min-height: 856px)  { body { font-size: 1.250rem;} }
+@media screen and (min-width: 1344px) and (min-height: 944px)  { body { font-size: 1.375rem;} }
+@media screen and (min-width: 1464px) and (min-height: 1024px) { body { font-size: 1.500rem;} }
+@media screen and (min-width: 1584px) and (min-height: 1112px) { body { font-size: 1.625rem;} }
+@media screen and (min-width: 1704px) and (min-height: 1194px) { body { font-size: 1.750rem;} }
+@media screen and (min-width: 1824px) and (min-height: 1280px) { body { font-size: 1.875rem;} }
+@media screen and (min-width: 1944px) and (min-height: 1368px) { body { font-size: 2.000rem;} }
+@media screen and (min-width: 2064px) and (min-height: 1448px) { body { font-size: 2.125rem;} }
+@media screen and (min-width: 2184px) and (min-height: 1536px) { body { font-size: 2.250rem;} }
+@media screen and (min-width: 2304px) and (min-height: 1616px) { body { font-size: 2.375rem;} }
+@media screen and (min-width: 2424px) and (min-height: 1704px) { body { font-size: 2.500rem;} }
+@media screen and (min-width: 2544px) and (min-height: 1784px) { body { font-size: 2.625rem;} }
+@media screen and (min-width: 2664px) and (min-height: 1872px) { body { font-size: 2.750rem;} }
+@media screen and (min-width: 2784px) and (min-height: 1952px) { body { font-size: 2.875rem;} }
+@media screen and (min-width: 2904px) and (min-height: 2040px) { body { font-size: 3.000rem;} }
+@media screen and (min-width: 3024px) and (min-height: 2128px) { body { font-size: 3.125rem;} }
+@media screen and (min-width: 3144px) and (min-height: 2208px) { body { font-size: 3.250rem;} }
+@media screen and (min-width: 3264px) and (min-height: 2296px) { body { font-size: 3.375rem;} }
+@media screen and (min-width: 3384px) and (min-height: 2376px) { body { font-size: 3.500rem;} }
+@media screen and (min-width: 3504px) and (min-height: 2464px) { body { font-size: 3.625rem;} }
+@media screen and (min-width: 3624px) and (min-height: 2544px) { body { font-size: 3.750rem;} }
+@media screen and (min-width: 3744px) and (min-height: 2632px) { body { font-size: 3.875rem;} }
+@media screen and (min-width: 3864px) and (min-height: 2712px) { body { font-size: 4.000rem;} }
+
+/* ------------------------------- Main Dropdown Menu --------------------------------------- */
+.dropdown { position: relative; display: inline-block;   }
+  
+.dropdown-content { display: none;  position: absolute;  background-color: #212529;
+                    color: var(--greyBRT);  border-radius: 0.375em;  border: 0.0625em solid var(--black);
+                    box-shadow: 0 0.5em 1em rgba(173, 181, 189, 0.15);
+                    padding: 0.5em 0;  font-size: 1em;  min-width: 10em;  margin: 0;
+                    list-style: none;  background-clip: padding-box; }
+  
+.dropdown-content a { display: block;  width: 100%;  padding: 0.25em 1em; clear: both;
+                      font-weight: 400;  color: var(--greyBRT);  text-align: inherit;
+                      text-decoration: none;  white-space: nowrap;  background-color: transparent;
+                      border: 0;  text-decoration: none; }
+  
+.dropdown-content a:hover { color: var(--greyBRT); background-color: #2B3035; }
+  
+.dropdown:hover .dropdown-content { display: block; }
+
+/* -------------------------- Results before & After links ---------------------------------- */
+.menu label { cursor: pointer; }
+.menu label:focus { outline: none; }
+
+.cover { position: absolute;  top: 0; background: var(--black);
+    width: 12em;  height: 100%;  z-index: 2001; }
+.right-cover { right: -12em; }
+.left-cover  { left:  -12em; }
+
+.menu { position: absolute;  min-width: 12em; top: 0;  background: #121212AA; color: var(--white);
+    height: 100%;  z-index: 2000;  transition: transform 0.35s; }
+.menu-left  { left: 0;  transform: translate3d(-12em, 0, 0); }
+.menu-right { right: 0; transform: translate3d( 12em, 0, 0); }
+  
+.menu label.menu-toggle { position: absolute;  right: -3em;  width: 3em;  height: 100%;
+    line-height: 0px;  display: block;  padding: 0; }
+.menu-left  label.menu-toggle { right: -3em; background: #12121288 url('https://wrestling.johnny-o.net/images/circle-arrow-left.svg')  50% 50% / 1.6em 1.6em no-repeat; }
+.menu-right label.menu-toggle { left:  -3em; background: #12121288 url('https://wrestling.johnny-o.net/images/circle-arrow-right.svg') 50% 50% / 1.6em 1.6em no-repeat; }
+
+.menu-left-checkbox,
+.menu-right-checkbox { display: none; }
+/* .menu label.menu-toggle { background: none; } */
+.menu-left-checkbox:checked + .menu-left   { transform: translate3d(0, 0, 0); }
+.menu-right-checkbox:checked + .menu-right { transform: translate3d(0, 0, 0); }
+
+/* ----------------------------- New Entry Button ----------------------------- */
+#myBtn { display: block; position: fixed; bottom: 24px; right: 8px; z-index: 100; 
+  background-color: #D9B310; color: #1D2731; font-weight: 400;
+  cursor: pointer; box-shadow: 2px 5px #1D2731;
+  padding: 8px 16px; border-radius: 8px; font-size: 1.125rem; }
+
+#myBtn:hover  { background-color: #D9B310BB; }
+#myBtn:active { background-color: #D9B31088; box-shadow: 1px 1px #1D2731;
+         transform: translateY(4px); }
+/* -------------------------------------------------------------------------------- */
+
+/* ---------------------- trying the scroll transition thing ---------------------- */
+/* problems when viewing on mobile 
+@media screen and (min-width: 0) and (max-width: 650px) {
+  .hidden { display: grid; place-items: center; align-content: center; opacity: 0; filter: blur (5px); transition: all 1s; }
+
+  .hidden-top     { transform: translateY(-100%); }
+  .hidden-bottom  { transform: translateY(12.5%); }
+  .hidden-left    { transform: translateX(-100%); }
+  .hidden-right   { transform: translateX(100%); }
+  .hidden-2       { transition-delay: 200ms; }
+
+  .show   { opacity: 1; filter: blur (0); transform: translateX(0); }
+}
+@media(prefers-reduced-motion) {
+  .hidden {transition: none;}
+}
+*/
+/* -------------------------------------------------------------------------------- */
+
+/* ----------------------------- Return To Top Button ----------------------------- */
+#backBtn { display: none; position: fixed; bottom: 24px; left: 8px; z-index: 100; 
+  background-color: #D9B310; color: #1D2731; font-weight: 400;
+  cursor: pointer; box-shadow: 2px 5px #1D2731;
+  padding: 8px 16px; border-radius: 8px; font-size: 1.125rem; }
+
+#backBtn:hover  { background-color: #D9B310BB; }
+#backBtn:active { background-color: #D9B31088; box-shadow: 1px 1px #1D2731;
+         transform: translateY(4px); }
+/* -------------------------------------------------------------------------------- */
+

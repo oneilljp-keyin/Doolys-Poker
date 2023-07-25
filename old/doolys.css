@@ -1,0 +1,177 @@
+* { padding: 0; margin: 0; box-sizing: border-box; }
+
+html { font-family: Arial; font-size: 100%; }
+
+body {
+  margin: 0; /* prevents scrollbars */
+  color: var(--white);
+  background-color: var(--black);
+  min-width: 22em; font-size: 1rem;
+}
+
+img       {border: hidden;}
+
+a.highlight   {font-size: 2em;}
+
+a:link.raw    {color: #FF0000;}		a:visited.raw  {color: #FF0000;}	a:active.raw  {color: #FF0000;}		a:hover.raw  {color: #FF0000;}
+a:link.sd     {color: #00BBEC;}		a:visited.sd   {color: #00BBEC;}	a:active.sd   {color: #00BBEC;}		a:hover.sd   {color: #00BBEC;}
+a:link.ecw    {color: #00CC00;}		a:visited.ecw  {color: #00CC00;}	a:active.ecw  {color: #00CC00;}		a:hover.ecw  {color: #00CC00;}
+a:link.snme   {color: #0077FF;}		a:visited.snme {color: #0077FF;}	a:active.snme {color: #0077FF;}		a:hover.snme {color: #0077FF;}
+a:link.ppv    {color: #FFFF00;}		a:visited.ppv  {color: #FFFF00;}	a:active.ppv  {color: #FFFF00;}		a:hover.ppv  {color: #FFFF00;}
+a:link.ss     {color: #FF9900;}		a:visited.ss   {color: #FF9900;}	a:active.ss   {color: #FF9900;}		a:hover.ss   {color: #FF9900;}
+a:link.cotc   {color: #FFBE7E;}		a:visited.cotc {color: #FFBE7E;}	a:active.cotc {color: #FFBE7E;}		a:hover.cotc {color: #FFBE7E;}
+a:link.wc     {color: #C1FF7D;}		a:visited.wc   {color: #C1FF7D;}	a:active.wc   {color: #C1FF7D;}		a:hover.wc   {color: #C1FF7D;}
+a:link.xxx    {color: #7DFFC2;}		a:visited.xxx  {color: #7DFFC2;}	a:active.xxx  {color: #7DFFC2;}		a:hover.xxx  {color: #7DFFC2;}
+a:link.aaa    {color: #7DBBFF;}		a:visited.aaa  {color: #7DBBFF;}	a:active.aaa  {color: #7DBBFF;}		a:hover.aaa  {color: #7DBBFF;}
+a:link.bbb    {color: #C57DFF;}		a:visited.bbb  {color: #C57DFF;}	a:active.bbb  {color: #C57DFF;}		a:hover.bbb  {color: #C57DFF;}
+a:link.ccc    {color: #FF7DDD;}		a:visited.ccc  {color: #FF7DDD;}	a:active.ccc  {color: #FF7DDD;}		a:hover.ccc  {color: #FF7DDD;}
+
+textarea    {font-size: 1em; font-family: Arial;}
+
+input       {font-size: 0.75em; font-family: Arial; font-weight: bold; text-align: center;}
+input.small {width: 2em; text-align: center;}
+input.med   {width: 4em; text-align: center;}
+input.large {width: 12em; text-align: center;}
+
+option     {font-size: 0.75em; font-family: Arial;}
+option.bio {font-size: 1.25em; font-family: Arial;}
+
+b           {color: #000000;}
+b.bg        {color: #FFFFFF; background-color: #000000;}
+b.ecw       {color: #00CC00;}
+b.raw       {color: #FF0000;}
+b.sd        {color: #00BBEC;}
+b.ppv       {color: #FFFF00;}
+b.snme      {color: #0077FF}
+b.note      {font-style: normal; color: #00BBEC; font-weight: normal;}
+b.winner    {color: #FF0000;}
+b.small     {font-size: 0.75em; color: #FF0000;}
+em          {color: #FF0000;}
+em.ppv      {color: #FFFF00; font-weight: bold;}
+table.c1    {background-color: #000000; border: hidden;}
+table.rules {font-size: 0.875em; color: #FFFFFF; text-align: left;}
+table.main  {font-size: 0.8125em; text-align: left;}
+table.point {font-size: 0.6875em}
+font.bg     {background-color: #000000;}
+
+.mobile	   {font-size: 0.5625em;}
+.career    {margin-left: 7em; font-style: normal; color: #00BBEC;}
+.grid01	   {font-size: 0.6875em;}
+.titles    {font-size: 1em; text-align: justify; color: #000000;}
+.titles2   {font-size: 0.6875em; color: #FFFFFF; text-align: left;}
+.titles3   {font-size: 0.8125em; color: #FFFFFF; text-align: left;}
+.titles4   {font-size: 0.9375em; text-align: justify;}
+.rumble    {font-size: 0.8125em;}
+.calander  {font-size: 0.75em; color: #FF0000;}
+.standings {font-size: 0.75em; color: #FFFFFF;}
+.breakhere {page-break-before: always;}
+
+.header1 {color: #FFFF00; font-size: 2em;}
+.header2 {color: #FFFFFF; font-size: 1.5em; font-weight: bold;}
+.header3 {color: #00BBFF; font-size: 1.125em;}
+.header4 {color: #FFFFFF; font-size: 1.125em;}
+.header5 {color: #FFFFFF; font-size: 0.9375em;}
+.header6 {color: #00CC00; font-size: 0.75em;}
+.header7 {color: #FFFF00; font-size: 1.5em; font-weight: bold;}
+
+.superscript {font-size: xx-small; vertical-align: top;} 
+.sup         {font-size: xx-small; vertical-align: top;} 
+.subscript   {font-size: xx-small; vertical-align: bottom;}
+.sub         {font-size: xx-small; vertical-align: bottom;}
+
+.mirror { 
+-moz-transform: scale(-1, -1);
+-webkit-transform: scale(-1, -1);
+-o-transform: scale(-1, -1);
+-ms-transform: scale(-1, -1);
+transform: scale(-1, -1);
+        } 
+
+#eventinfo {position: absolute;
+            width: 12.5em;
+            border: 1px solid white;
+            padding: 0px;
+            visibility: hidden;
+            z-index: 200;
+            color: #000000;}
+
+#mapinfo   {position: absolute;
+            width: 21.5em;
+            border: 1px solid white;
+            padding: 0px;
+            visibility: hidden;
+            z-index: 200;
+            color: #000000;}
+
+#thumbnail {position: absolute;
+            width: 9.625em;
+            height: 9.625em;
+            border: 1px solid white;
+            padding: 0px;
+            visibility: hidden;
+            z-index: 200;
+            color: #000000;
+            background-color: #000000;}
+
+#sunnypics {position: relative;
+            padding: 0px;
+            height: 31.25em;}
+
+#displayinfo {background-image: url(http://wrestling.johnny-o.net/images/sm_wwe_bw.jpg);
+              height: 3.125em;
+              width: 12.5em;
+              color: white;
+              font-weight: 900;
+              text-align: center;}
+
+#dismapinfo {background-image: url(http://wrestling.johnny-o.net/images/sm_wwe_bw.jpg);
+              height: 3.125em;
+              width: 21.5em;
+              color: white;
+              font-weight: 900;
+              text-align: center;}
+
+.centertable {vertical-align: middle;}
+
+.left-white   { border-left:   solid 1px var(--white); }
+.right-white  { border-right:  solid 1px var(--white); }
+.bottom-white { border-bottom: solid 1px var(--white); }
+.top-white    { border-top:    solid 1px var(--white); }
+.all-white    { border:        solid 1px var(--white); }
+
+.left-grey    { border-left:   solid 1px var(--greyMED); }
+.right-grey   { border-right:  solid 1px var(--greyMED); }
+.bottom-grey  { border-bottom: solid 1px var(--greyMED); }
+.top-grey     { border-top:    solid 1px var(--greyMED); }
+.all-grey     { border:        solid 1px var(--greyLGT); min-width: 16em;}
+
+a:visited, a:active, a:link, a:hover { color: inherit; font-weight: bold; text-decoration: none; }
+a:hover { color: #F5F5F5AA; text-decoration: underline; }
+
+/* ------------------------------- Changes for Larger Screens --------------------------------------- */
+
+@media screen and (max-width: 1096px)                          { body { font-size: 1.000rem;} }
+@media screen and (min-width: 1096px) and (min-height: 812px)  { body { font-size: 1.125rem;} }
+@media screen and (min-width: 1224px) and (min-height: 856px)  { body { font-size: 1.250rem;} }
+@media screen and (min-width: 1344px) and (min-height: 944px)  { body { font-size: 1.375rem;} }
+@media screen and (min-width: 1464px) and (min-height: 1024px) { body { font-size: 1.500rem;} }
+@media screen and (min-width: 1584px) and (min-height: 1112px) { body { font-size: 1.625rem;} }
+@media screen and (min-width: 1704px) and (min-height: 1194px) { body { font-size: 1.750rem;} }
+@media screen and (min-width: 1824px) and (min-height: 1280px) { body { font-size: 1.875rem;} }
+@media screen and (min-width: 1944px) and (min-height: 1368px) { body { font-size: 2.000rem;} }
+@media screen and (min-width: 2064px) and (min-height: 1448px) { body { font-size: 2.125rem;} }
+@media screen and (min-width: 2184px) and (min-height: 1536px) { body { font-size: 2.250rem;} }
+@media screen and (min-width: 2304px) and (min-height: 1616px) { body { font-size: 2.375rem;} }
+@media screen and (min-width: 2424px) and (min-height: 1704px) { body { font-size: 2.500rem;} }
+@media screen and (min-width: 2544px) and (min-height: 1784px) { body { font-size: 2.625rem;} }
+@media screen and (min-width: 2664px) and (min-height: 1872px) { body { font-size: 2.750rem;} }
+@media screen and (min-width: 2784px) and (min-height: 1952px) { body { font-size: 2.875rem;} }
+@media screen and (min-width: 2904px) and (min-height: 2040px) { body { font-size: 3.000rem;} }
+@media screen and (min-width: 3024px) and (min-height: 2128px) { body { font-size: 3.125rem;} }
+@media screen and (min-width: 3144px) and (min-height: 2208px) { body { font-size: 3.250rem;} }
+@media screen and (min-width: 3264px) and (min-height: 2296px) { body { font-size: 3.375rem;} }
+@media screen and (min-width: 3384px) and (min-height: 2376px) { body { font-size: 3.500rem;} }
+@media screen and (min-width: 3504px) and (min-height: 2464px) { body { font-size: 3.625rem;} }
+@media screen and (min-width: 3624px) and (min-height: 2544px) { body { font-size: 3.750rem;} }
+@media screen and (min-width: 3744px) and (min-height: 2632px) { body { font-size: 3.875rem;} }
+@media screen and (min-width: 3864px) and (min-height: 2712px) { body { font-size: 4.000rem;} }
